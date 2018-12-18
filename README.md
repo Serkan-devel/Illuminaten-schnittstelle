@@ -1,1 +1,1 @@
-# Unofficial Minds-API docs
+# Illuminaten-schnittstelle
