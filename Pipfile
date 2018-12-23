@@ -11,3 +11,6 @@ recommonmark = "*"
 
 [requires]
 python_version = "3.7"
+
+[scripts]
+serve = "bash docs/server.sh"
