@@ -14,6 +14,10 @@ A collection of instructions to contact the illuminati
    
    maindrive
    auth
+   comment
+   channel
+   notifications
+   blog
 
 Indices and tables
 ==================
