@@ -13,7 +13,7 @@ A collection of instructions to contact the illuminati
    :caption: Contents:
    
    maindrive
-
+   auth
 
 Indices and tables
 ==================
