@@ -20,13 +20,13 @@
 # -- Project information -----------------------------------------------------
 
 project = 'LupinAPI'
-copyright = '2018, Serkan-devel'
-author = 'Serkan-devel'
+copyright = '2018, SerkanDevel'
+author = 'SerkanDevel'
 
 # The short X.Y version
-version = '0.0.1'
+version = ''
 # The full version, including alpha/beta/rc tags
-release = 'rc0'
+release = ''
 
 
 # -- General configuration ---------------------------------------------------
@@ -48,10 +48,8 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-from recommonmark.parser import CommonMarkParser
-source_parsers = {'.md': CommonMarkParser}
-source_suffix = ['.rst', '.md']
-#source_suffix = '.md'
+# source_suffix = ['.rst', '.md']
+source_suffix = '.rst'
 
 # The master toctree document.
 master_doc = 'index'
@@ -66,7 +64,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
@@ -132,7 +130,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'LupinAPI.tex', 'LupinAPI Documentation',
-     'Serkan-devel', 'manual'),
+     'SerkanDevel', 'manual'),
 ]
 
 
