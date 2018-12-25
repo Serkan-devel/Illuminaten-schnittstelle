@@ -7,9 +7,13 @@ Minds staff still developing on OAuth-support to make this process more secure.
 ### `/api/v1/authenticate`
 #### Login to Minds.com with your username and password
 * Method: `POST`
-* Request Params:
-    * `username`
-    * `password`
+* Request:
+
+|Parameters|Function|Example|
+|---|:---:|---:|
+|username|Your username|medworthy|
+|password|Your password|***|
+
 * Response Params:
     `success` "success"
 * Note: You need to pass xsrf-tokens and cookies on the http-header
