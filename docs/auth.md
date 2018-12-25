@@ -14,6 +14,10 @@ Minds staff still developing on OAuth-support to make this process more secure.
 |username|Your username|medworthy|
 |password|Your password|***|
 
-* Response Params:
-    `success` "success"
+* Response:
+
+|Parameters|Function|Example output|
+|---|:---:|---:|
+|`success`|displays status of success|"success"|
+
 * Note: You need to pass xsrf-tokens and cookies on the http-header
