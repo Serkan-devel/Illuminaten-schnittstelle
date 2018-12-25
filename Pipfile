@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 sphinx = "*"
 recommonmark = "*"
+sphinx-markdown-tables = "*"
 
 [requires]
 python_version = "3.7"
