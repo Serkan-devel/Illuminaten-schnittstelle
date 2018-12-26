@@ -22,3 +22,7 @@
 
 
 ### Conversations
+
+| Parameters | type | Description |
+| --- |:---:|---:|
+| `guid` | string | Your userID and the id of the one you have in contact, is being displayed here. \n The Format of it looks a little like this `{your guid}:{guid of the other user}`. \n Output: "618457429289480205:661345766295478287" |
