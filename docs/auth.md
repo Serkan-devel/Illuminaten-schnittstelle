@@ -19,5 +19,6 @@ Minds staff still developing on OAuth-support to make this process more secure.
 |Parameters|Function|Example output|
 |---|:---:|---:|
 |`success`|displays status of success|"success"|
+|`user`|gives output of user||
 
 * Note: You need to pass xsrf-tokens and cookies on the http-header
