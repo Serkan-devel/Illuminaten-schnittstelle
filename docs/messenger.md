@@ -14,6 +14,16 @@
 | `load-next` | int | Output: 12 |
 | `load-previous` | int | Output: -12 |
 
+### View chat timeline
+#### `https://www.minds.com/api/v2/messenger/conversations/{your guid}:{other guid}?limit=8&offset=&finish=`
+* Method: `GET`
+* Params: `limit=8&offset=&finish=`
+* Response:
+
+| Parameters | type | Description |
+| --- |:---:|---:|
+| `status` | string | Output: "success" |
+
 ### Authenticate with messenger
 #### `https://www.minds.com/api/v2/messenger/keys/unlock`
 * Method: `POST`
