@@ -16,6 +16,7 @@ A collection of instructions to contact the illuminati
    auth
    comment
    channel
+   messenger
    media
    notifications
    blog

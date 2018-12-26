@@ -1,9 +1,16 @@
 ## Messenger
 
-### `https://www.minds.com/api/v2/messenger/conversations?limit=:int`
+### `https://www.minds.com/api/v2/messenger/conversations`
 * Method: `GET`
 * Params: `limit=:int`
-* Response: ``
+
+* Response:
+| Parameters | type | Description |
+| --- |:---:|---:|
+| `status` | string | Output:"success" |
+| `converstions` | list | a list of the first 12 [conversations](#conversations) |
+| `load-next` | int | Output: 12 |
+| `load-previous` | int | -12 |
 
 ### `https://www.minds.com/api/v2/messenger/keys/unlock`
 * Method: `POST`
@@ -11,3 +18,4 @@
 * Response: `{"status":"success"}`
 
 
+### Conversations
