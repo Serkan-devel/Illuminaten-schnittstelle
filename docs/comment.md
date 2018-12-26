@@ -3,7 +3,7 @@
 Writing posts in groups or from a timeline uses the same endpoit, but does differ by the request which needs to be sent
 
 ### Write a comment from the Newsfeed
-#### ` GET /api/v1/newsfeed`
+#### `/api/v1/newsfeed`
 * Method: `POST`
 * Authentication: required
 * Request:
@@ -87,3 +87,17 @@ Writing posts in groups or from a timeline uses the same endpoit, but does diffe
 | `impressions` | int | The ammount of views, this post has recieved|
 | `reminds` | int | The ammount of times, this post has been reminded|
 | `wire_threshold`| ? | Output: null |
+
+
+## Up/downvotes
+### `https://www.minds.com/api/v1/thumbs/[base64-encoded string]/{up or down}`
+* Method: `PUT`
+* Request: 
+
+| Key | Value |
+| --- | --- |
+| `_type` | "comment" |
+| `entity_guid`| "924651117277278208" |
+| `parent_guid` | "0" |
+
+* Response: `{"status":"success"}`
