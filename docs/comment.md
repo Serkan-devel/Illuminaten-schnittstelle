@@ -23,12 +23,12 @@ Writing posts in groups or from a timeline uses the same endpoit, but does diffe
 | `tags` | list | hashtags included in the post |
 
 * Response:
-    
+
 | Parameter | type | Description |
 | --- |:---:| ---:|
 | `status` | string | Output: "success" |
-| `guid` | string | the id of the created post. You can take the guid and enter it like this `https://www.minds.com/newsfeed/:guid` |
-| `activity` | dict | Gives out the [activity](#activity) of the post |
+| `guid` | string | ID of the post. You can vist this post like this `https://www.minds.com/newsfeed/:guid`. Output: "924651117277278208" |
+| `activity` | dict | returns the [activity object](#activity) of the post |
 
 ### Write a comment into a group
 
