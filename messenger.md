@@ -23,12 +23,30 @@
 | Parameters | type | Description |
 | --- |:---:|---:|
 | `status` | string | Output: "success" |
+| `guid` | string | The guid of you and the id of the one, you're talking to. <br> Output: "618457429289480205:661345766295478287"|
+| `type` | string | Output:"messenger" |
+| `subtype` | string | Output: "consversation" |
+| `unread` | int | Output: 0|
+| `online` | bool | false |
+| `ts` | int | Timestamp. Output: "1541346828" |
+| `participants`| list | basically, the user-object of the one, your're contacting |
+| `name` | string | @-name of the other user |
+| `username` | string | Displayname of the other user |
+| `socketRoomName` | string | basically `guid` but with `conversation:` prepended to it. <br> "conversation:618457429289480205:661345766295478287" |
+| `blocked` | string | if you blocked that user |
+| `unavailable` | bool | Output: false |
+| `messages` | list | A chain of messages between you and the other user |
+| `load-next` | string | guid of the next messages |
+| `load-previos` | string | guid of the previous messages |
+| `publickeys` | dict | A dict of your public key, the public key of the other user and the public key of the room. <br> `{[your guid]:[public key],[his/her guid]:[public key],[(your guid):(his/her guid)]:[public key]}` |
+
 
 ### Authenticate with messenger
 #### `https://www.minds.com/api/v2/messenger/keys/unlock`
 * Method: `POST`
 * Params: `{password: ":msgpassword"}`
-* Response: `{"status":"success"}`
+* JSON Response: `{"status":"success"}`
+* Cookie Response: `messenger-secret`
 
 
 ### Conversations
