@@ -14,5 +14,5 @@ sphinx-markdown-tables = "*"
 python_version = "3.7"
 
 [scripts]
-serve = "bash docs/server.sh"
+serve = "bash server.sh"
 html = "make html"
