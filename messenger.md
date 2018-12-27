@@ -7,7 +7,7 @@
 
 * Response:
 
-| Parameters | type | Description |
+| Parameter | type | Description |
 | --- |:---:|---:|
 | `status` | string | Output:"success" |
 | `converstions` | list | a list of the first 12 [conversations](#conversations) |
@@ -20,7 +20,7 @@
 * Params: `limit=8&offset=&finish=`
 * Response:
 
-| Parameters | type | Description |
+| Parameter | type | Description |
 | --- |:---:|---:|
 | `status` | string | Output: "success" |
 | `guid` | string | The guid of you and the id of the one, you're talking to. <br> Output: "618457429289480205:661345766295478287"|
@@ -35,11 +35,27 @@
 | `socketRoomName` | string | basically `guid` but with `conversation:` prepended to it. <br> "conversation:618457429289480205:661345766295478287" |
 | `blocked` | string | if you blocked that user |
 | `unavailable` | bool | Output: false |
-| `messages` | list | A chain of messages between you and the other user |
+| `messages` | list | A chain of [messages](#messages) between you and the other user |
 | `load-next` | string | guid of the next messages |
 | `load-previos` | string | guid of the previous messages |
 | `publickeys` | dict | A dict of your public key, the public key of the other user and the public key of the room. <br> `{[your guid]:[public key],[his/her guid]:[public key],[(your guid):(his/her guid)]:[public key]}` |
 
+### Comment
+* Method: `GET`
+* Request:
+
+| Parameter | type | Description |
+| --- |:---:|---:|
+| `message` | string | the message that you send |
+| `encrypt` | bool | Output: `true` |
+| `tabID` | string | Output: "6yxhy" |
+
+* Response:
+    Same as [messages](#messages) but with only one difference
+
+| Parameter | type | Description |
+| --- |:---:|---:|
+| `messages` | dict | A dictionary with both guids of you and the reciever, but with encryption keys attatched to it. <br> Example: `"messages": {[your guid]:[encryption key],[reciever guid]:[encryption key]}`|
 
 ### Authenticate with messenger
 #### `https://www.minds.com/api/v2/messenger/keys/unlock`
@@ -51,7 +67,7 @@
 
 ### Conversations
 
-| Parameters | type | Description |
+| Parameter | type | Description |
 | --- |:---:|---:|
 | `guid` | string | Your userID and the id of the one you have in contact, is being displayed here.<br> The Format of it looks a little like this `{your guid}:{guid of the other user}`. <br> Output: "618457429289480205:661345766295478287" |
 | `type`| string | Output: "messenger" |
@@ -65,3 +81,19 @@
 | `socketRoomName` | string| basically `guid` but with `conversation:` prepended to it. <br> Output: "conversation:618457429289480205:661345766295478287" |
 | `subscribed` | bool | Is the other user subscribe to you |
 | `subscriber` | bool | Are you subscribed to that user? |
+
+
+### Messages
+
+| Parameter | type | Description |
+| --- |:---:|---:|
+| `guid` | string | the guid of this message block |
+| `friendly_ts` | ? | null |
+| `messages` | string | the content of the message, displayed |
+| `messages` | dict | a guid and the message above. <br> Example: `"messages": {"018454429285497205": "textual content here"}` |
+| `type` | string | Output:"object" |
+| `subtype` | string | Output:"message" |
+| `owner_guid` | ? | Output: null |
+| `owner` | dict | the user information of the author of that message|
+| `time_created` | string | servertime when this message has been made. <br> Example: "1542346933" |
+| `ownerObj` | dict | same as owner but the `guid`-field at the top has an empty string |
