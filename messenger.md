@@ -15,7 +15,7 @@
 | `load-previous` | int | Output: -12 |
 
 ### View chat timeline
-#### `https://www.minds.com/api/v2/messenger/conversations/{your guid}:{other guid}?limit=8&offset=&finish=`
+#### `https://www.minds.com/api/v2/messenger/conversations/{your guid}:{other guid}?limit=8&offset={message guid}&finish=`
 * Method: `GET`
 * Params: `limit=8&offset=&finish=`
 * Response:

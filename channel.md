@@ -1,7 +1,14 @@
 ## Channels
 
-### User
+### Get channel info
+#### `https://www.minds.com/api/v1/channel/:username?`
+#### or `https://www.minds.com/{user guid}`
 
+* Method: `GET`
+* Request: ""
+* Response: Returns [User](#user)
+
+### User
 
 | Parameter | Type | Description |
 | --- | :---: | ---: |
