@@ -17,3 +17,8 @@
 | `pinned` | list | The [activity](#activity) of all pinned posts |
 | `activity` | list | The [activity](#activity) of the timeline |
 | `load-next` | string | The guid, leading to later posts|
+
+
+### Activity
+
+Activity is simply just an array of posts
