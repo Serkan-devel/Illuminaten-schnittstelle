@@ -1,5 +1,9 @@
 ## Messenger
 
+One of the seeling points of 'Minds' is that their messenger is encrypted, hence their name "encrypted chat".
+Considering that almost all messenger encryption happends on the server-side, an admin or a hacker only needs to view all plaintext authentication requests, or tamper with the encryption keys.
+Users of the messenger won't notice if anything got tampered or spyed on but it's still enough to give them a false-sense of security.
+
 ### View conversations
 #### `https://www.minds.com/api/v2/messenger/conversations`
 * Method: `GET`
