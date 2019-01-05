@@ -1,9 +1,9 @@
-## Comments/Posts
+# Comments/Posts
 
 Writing posts in groups or from a timeline uses the same endpoit, but does differ by the request which needs to be sent
 
-### Write a comment from the Newsfeed
-#### `/api/v1/newsfeed`
+## Writing a Post
+### `/api/v1/newsfeed`
 * Method: `POST`
 * Authentication: required
 * Request:
@@ -19,7 +19,8 @@ Writing posts in groups or from a timeline uses the same endpoit, but does diffe
 | `url` | string | Output: "" |
 | `attatchemt_guid` | ? | Output: null |
 | `mature` | int | If the post is rated as mature or not. Output: 0 |
-| `access_id` | int | Output: 2 |
+| (optional) `container_guid` | string | This field only exists if you post into a group and holds the guid of it. |
+| `access_id` | int/string | Might contain the guid of a group, otherwise it's 2 |
 | `tags` | list | hashtags included in the post |
 
 * Response:
@@ -30,21 +31,8 @@ Writing posts in groups or from a timeline uses the same endpoit, but does diffe
 | `guid` | string | ID of the post. You can vist this post like this `https://www.minds.com/newsfeed/:guid`. Output: "924651117277278208" |
 | `activity` | dict | returns the [activity object](#activity) of the post |
 
-### Write a comment into a group
 
-* Params:
-    * dict: `{"message":"Your message here","wire_threshold":null,"is_rich":0,"title":"","description":"","thumbnail":"","url":"","attachment_guid":null,"mature":0,"container_guid":"864241400084602880","access_id":"864241400084602880","tags":[]}`
-* Response:
-    * json: `{"status":"success","guid":"923890509491490816","activity":{"guid":"923890509491490816","type":"activity","time_created":"1545648662","time_updated":"1545648662","container_guid":"864241400084602880","owner_guid":"618457429289480205","access_id":"864241400084602880","tags":[],"title":false,"blurb":false,"perma_url":false,"message":"Is this thing on?","ownerObj":{"guid":"618457429289480205","type":"user","subtype":false,"time_created":"1472827741","time_updated":false,"container_guid":"0","owner_guid":"0","site_guid":false,"access_id":"2","tags":[":hashtags"],"name":":screenname","username":":username","language":"en","icontime":"1541512228","legacy_guid":false,"featured_id":false,"banned":"no","website":"","briefdescription":"(\\ OwO \/)","dob":"","gender":"private","city":"","merchant":false,"boostProPlus":false,"fb":false,"mature":"0","monetized":"","signup_method":false,"social_profiles":[],"feature_flags":false,"programs":[],"plus":false,"hashtags":false,"verified":false,"founder":false,"disabled_boost":false,"boost_autorotate":false,"categories":["gaming","art","animals","technology","music"],"wire_rewards":null,"pinned_posts":["845689029699313664"],"is_mature":false,"mature_lock":false,"last_accepted_tos":"1536928774","opted_in_hashtags":"2","chat":true,"subscribed":false,"subscriber":false,"boost_rating":"2","rewards":true,"p2p_media_enabled":false,"eth_wallet":":ethwallet","rating":"1"},"containerObj":{"guid":"864241400084602880","type":"group","name":"Minds Group Testing","brief_description":"A group to test out Minds Group functions\n\n\nMinds Group Admins\nhttps:\/\/www.minds.com\/groups\/profile\/806941869062418432","icon_time":"1531430013","banner":"1531427931","banner_position":"0","membership":"2","moderated":"1","default_view":"0","featured":"0","featured_id":null,"tags":[],"boost_rejection_reason":"-1","mature":false,"rating":"1","videoChatDisabled":"1","owner_guid":"614198139255005203","members:count":"36","requests:count":"0","icontime":"1531430013","briefdescription":"A group to test out Minds Group functions\n\n\nMinds Group Admins\nhttps:\/\/www.minds.com\/groups\/profile\/806941869062418432","is:owner":false,"is:moderator":false,"is:member":true,"is:creator":false,"is:awaiting":false,"comments:count":"6"},"thumbnail_src":false,"remind_object":false,"entity_guid":false,"featured":false,"featured_guid":false,"custom_type":false,"custom_data":false,"thumbs:up:count":0,"thumbs:up:user_guids":[],"thumbs:down:count":0,"thumbs:down:user_guids":false,"p2p_boosted":false,"mature":false,"monetized":false,"paywall":false,"edited":false,"comments_enabled":true,"wire_totals":{"tokens":"0"},"boost_rejection_reason":-1,"pending":true,"rating":2,"comments:count":0,"impressions":0,"reminds":0,"wire_threshold":null}}`
-
-### Write a comment under a post
-
-* Params:
-    * dict: `{"is_rich":0,"title":"","description":"","thumbnail":"","url":"","attachment_guid":null,"mature":0,"access_id":2,"comment":":message"}`
-* Response:
-    * json: `{"status":"success","comment":{"type":"comment","entity_guid":923884043321114624,"parent_guid":"923884043321114624","guid":"eyJfdHlwZSI6ImNvbW1lbnQiLCJlbnRpdHlfZ3VpZCI6IjkyMzg4NDA0MzMyMTExNDYyNCIsImd1aWQiOiI5MjM5ODUwOTkwMjQyNTcwMjQiLCJwYXJlbnRfZ3VpZCI6IjAifQ==","has_children":false,"owner_guid":"618457429289480205","container_guid":"618457429289480205","time_created":1545671214,"time_updated":1545671214,"access_id":2,"body":":message","attachments":[],"mature":false,"edited":false,"spam":false,"deleted":false,"_guid":"923985099024257024","luid":"eyJfdHlwZSI6ImNvbW1lbnQiLCJlbnRpdHlfZ3VpZCI6IjkyMzg4NDA0MzMyMTExNDYyNCIsImd1aWQiOiI5MjM5ODUwOTkwMjQyNTcwMjQiLCJwYXJlbnRfZ3VpZCI6IjAifQ==","ownerObj":{"guid":"618457429289480205","type":"user","subtype":false,"time_created":"1472827741","time_updated":false,"container_guid":"0","owner_guid":"0","site_guid":false,"access_id":"2","tags":[":hashtags"],"name":":displayname","username":":username","language":"en","icontime":"1541512228","legacy_guid":false,"featured_id":false,"banned":"no","website":"","briefdescription":"(\\ OwO \/)","dob":"","gender":"private","city":"","merchant":false,"boostProPlus":false,"fb":false,"mature":0,"monetized":"","signup_method":false,"social_profiles":[],"feature_flags":false,"programs":[],"plus":false,"hashtags":false,"verified":false,"founder":false,"disabled_boost":false,"boost_autorotate":false,"categories":["gaming","art","animals","technology","music"],"wire_rewards":null,"pinned_posts":["845689029699313664"],"is_mature":false,"mature_lock":false,"last_accepted_tos":1536928774,"opted_in_hashtags":2,"chat":true,"subscribed":false,"subscriber":false,"boost_rating":"2","rewards":true,"p2p_media_enabled":false,"eth_wallet":":ethwallet","rating":1},"description":":message"}}`
-
-### Activity
+## Activity
 
 | Parameter | type | Description |
 | --- |:---:|---:|
@@ -52,16 +40,16 @@ Writing posts in groups or from a timeline uses the same endpoit, but does diffe
 | `type` | string | Output: "activity" |
 | `time_created` | string | server time of when this post has been crated. Output: "1545830005" |
 | `time_updated`| string | server time of when the post has last been edited |
-| `container_guid` | string | The ID of which timeline that post is visible |
-| `owner_guid`| string | ID of the creator of that post. Can be the same as `container_guid`|
-| `access_id` | string| Output: "2" |
+| `container_guid` | string | Either the guid of a channel or the guid of a group, on which this is posted |
+| `owner_guid`| string | ID of the creator of that post. Can be the same as `container_guid` if not posted into a group |
+| `access_id` | string | Output: "2" |
 | `tags` | list | A collections of all hashtags, that are found in the body of the post |
 | `title` | bool | Output: false |
 | `blurb` | bool | Output: false |
 | `perma_url` | bool | Output: false |
 | `message` | string | The written content of the post. |
 | `ownerObj` | dict | Returns all [user]-data of the author|
-| `containerObj` | bool | Output: false |
+| `containerObj` | bool/dict | Either the [object of a group](#containerobj) or false |
 | `thumbnail_src` | string | url source of the image, attatched to the post |
 | `remind_object`| bool | Output: false |
 | `entitiy_guid` | bool | Output: false |
@@ -88,6 +76,39 @@ Writing posts in groups or from a timeline uses the same endpoit, but does diffe
 | `reminds` | int | The ammount of times, this post has been reminded|
 | `wire_threshold`| ? | Output: null |
 
+
+## containerObj
+
+| Parameter | type | Description |
+| --- |:---:|---:|
+| `guid` | string | The guid of a group |
+| `type` | string | Output: "group" |
+| `name` | string | The name of the group |
+| `brief_description` | string | The description of a group |
+| `icon_time` | string | Output: "1534475237"|
+| `banner` | string | Output: "1534475239" |
+| `banner_position` | string | Output: "0" |
+| `membership` | string | Output: "2" |
+| `moderated` | string | Output: "0" |
+| `default_view` | string | Output: "0" |
+| `featured` | string | Output: "0" |
+| `featured_id` | ? | Output: `null` |
+| `tags` | list | A list of hashtags, which are set by the group admins |
+| `boost_rejection_reason` | string | Output: "-1" |
+| `mature` | bool | false |
+| `rating` | string | Output: "1" |
+| `videoChatDisabled` | string | Output: "1" |
+| `owner_guid` | string | The guid of the channel, which created that group |
+| `members:count` | string | The ammount of group members. <br> Output: "83" |
+| `requests:count` | string | The ammount of channels, requesting membership <br> Output: "0" |
+| `icontime` | string | Output: "1534475237" |
+| `briefdescription` | string | Exactly the same as `brief_description` |
+| `is:owner` | bool | Output: `false` |
+| `is:moderator` | bool | Output: `false` |
+| `is:member` | bool | Output: `true` |
+| `is:creator` | bool | Output: `false` |
+| `is:awaiting` | bool | At some groups, mods have to manually approve or denie posts to be viewable on the timeline <br>Output: `false` |
+| `comments:count` | bool | The ammount of comments under the post. <br> Output: "0" |
 
 ## Up/downvotes
 ### `https://www.minds.com/api/v1/thumbs/[base64-encoded string]/{up or down}`
