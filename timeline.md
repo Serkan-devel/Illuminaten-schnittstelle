@@ -1,13 +1,15 @@
-## Timeline
+# Timeline
 
 
-### View user timeline
-#### `https://www.minds.com/api/v1/newsfeed/personal/{user guid}?limit=12&offset=&pinned={post guid}`
+## View channel timeline
+### `https://www.minds.com/api/v1/newsfeed/personal/:user_guid?limit=12&offset=&pinned=:post_guid`
+## View group timeline
+### `https://www.minds.com/api/v1/newsfeed/container/:group_guid?limit=12&offset=`
 * Method: `GET`
 * Request URL Params:
-    * `limit`: how many posts are recieved at a time
-    * `offset` : from which guid the [activity](#activity) should start
-    * `pinned` : guid of the pinned post
+    * `limit`: how many posts are recieved at a time. Default is `12`
+    * `offset` : from which guid the [activity](#activity) should start. Default is ``
+    * `pinned` : The post of a guid, which has been pinned (`:post_guid`) 
 * Response:
 
 | Parameter | Type | Description |
@@ -19,6 +21,6 @@
 | `load-next` | string | The guid, leading to later posts|
 
 
-### Activity
+## Activity
 
 Activity is simply just an array of posts
