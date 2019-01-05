@@ -31,6 +31,30 @@ Writing posts in groups or from a timeline uses the same endpoit, but does diffe
 | `guid` | string | ID of the post. You can vist this post like this `https://www.minds.com/newsfeed/:guid`. Output: "924651117277278208" |
 | `activity` | dict | returns the [activity object](#activity) of the post |
 
+## Writing a comment under a Post
+### `https://www.minds.com/api/v1/comments/:guid`
+* Method: `POST`
+* Params:
+    * `guid` - the guid of a post
+* Request
+
+| Parameter | type | Description |
+| --- |:---:| ---:|
+| `is_rich` | int | If rich text is enabled. <br> Output: `0` |
+| `title` | string | The title of a comment? <br> Oututp: "" |
+| `description` | string | Output: "" |
+| `thumbnail` | string | Output: "" |
+| `attachment_guid` | ? | Output: `null` |
+| `mature` | int | If the comment is rated mature or not. <br> Output: `0` |
+| `access_id` | int | Output: `2` |
+| `comment` | string | The actuall comment, which gets displayed |
+
+* Response
+
+| Parameter | type | Description |
+| --- |:---:| ---:|
+| `status` | string | Output: "success" |
+| `comment` | dict | Dictionary of [Comment](#comment) |
 
 ## Activity
 
@@ -76,6 +100,40 @@ Writing posts in groups or from a timeline uses the same endpoit, but does diffe
 | `reminds` | int | The ammount of times, this post has been reminded|
 | `wire_threshold`| ? | Output: null |
 
+
+## Comment
+
+| Parameter | type | Description |
+| --- |:---:|---:|
+| `type` | string | Output:"comment" |
+| `entity_guid` | int | The guid of the comment itself? |
+| `parent_guid` | string | The guid of the post, one has commented under |
+| `guid` | string | A base64-encoded json string [check decoded output](#comment_guid) |
+| `has_children` | bool | Output: `false` |
+| `owner_guid` | string | The guid of the channel who crate this comment |
+| `container_guid` | string | Same as `owner_guid` |
+| `time_created` | int | The servertime of when this comment has been posted. <br> Output: 1546701454 |
+| `time_edited` | int | The last time this has been edited. If this comment has never been change, it's the same as `time_created` |
+| `access_id` | int | Output: 2 |
+| `body` | string | The actual content of the comment, which has been written |
+| `attatchments` | list | An empty list |
+| `mature` | bool | If this comment is rated mature or not. <br> Output: `false` |
+| `edited` | bool | If this comment has been edited or not. <br> Output: `false` |
+| `spam` | bool | If this comment has been marked as spam or not. <br> Output: `false` |
+| `deleted` | bool | If this comment has been deleted or not? <br> Output: `false` |
+| `_guid` | string | Output: "928306239371825152" |
+| `luid` | string | A base64-encoded json string which has the same structure as [Comment_guid](#comment_guid) |
+| `ownerObj` | dict | Gives out all public data of the user who created this comment |
+| `description` | string | same as `body` |
+
+## Comment_guid
+
+| Parameter | type | Description |
+| --- |:---:|---:|
+| `_type` | string | Output: "comment" |
+| `entity_guid` | string | The guid of the post which has been commented on |
+| `guid` | string | The same guid as seen on `_guid` on [Comment](#comment) |
+| `parent_guid` | string | Output: "0" |
 
 ## containerObj
 
