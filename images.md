@@ -8,7 +8,13 @@
     * `offset` - The `:media_guid` from which the query should start
     * `rating`- ? Probably if it's set to mature or not
 * Response:
-    * json: ``
+
+| Parameter | Type | Description |
+| --- | :---: | ---: |
+| `success` | string | Output: "success" |
+| `entities` | list | Returns a list of multiple [entities](#entities) |
+| `load-next` | string | The guid which can be appended to `offset` to load earlier posts |
+| `load_previous` | string | The guid which can be appended to `offset` to load later posts |
 
 ## View data from a single image from the gallery
 ### `/api/v1/media/recommended/image/:channel_guid?current=:media_guid&next=&limit=6`
@@ -46,7 +52,7 @@
 | `time_created` | string | Servertime of when this post has been created |
 | `time_updated` | string | Similar to `time_edited` but has a different value of when the post was last edited |
 | `container_guid` | string | The guid of either a channel of a group which holds this post |
-| `owner_-guid` | string | The guid of the channel, which created this post. |
+| `owner_guid` | string | The guid of the channel, which created this post. |
 | `access_id` | string | Output: "0" |
 | `title` | string | Output: "" |
 | `featured` | bool | Output: `false` |
