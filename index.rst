@@ -16,10 +16,11 @@ A collection of instructions to contact the illuminati
    auth
    comment
    channel
-   messenger
-   media
-   notifications
    blog
+   messenger
+   images
+   search
+   notifications
 
 Indices and tables
 ==================

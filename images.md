@@ -1,7 +1,7 @@
-# Media
+# Images
 
 ## List images from a user
-## `/api/v1/entities/owner/images/:username?limit=:int&offset=&rating=2`
+### `/api/v1/entities/owner/images/:username?limit=:int&offset=&rating=2`
 * Method: `GET`
 * Params:
     * `limit` - How specify how many posts get loaded at the same time
@@ -10,7 +10,7 @@
 * Response:
     * json: ``
 
-## View data from a single image post
+## View data from a single image from the gallery
 ### `/api/v1/media/recommended/image/:channel_guid?current=:media_guid&next=&limit=6`
 * Method: `GET`
 * Request params:
@@ -30,11 +30,11 @@
 * Method: `GET`
 * Request Params:
     * `:media_guid` - replace this with the guid of the image
-    * `size`  - replace this with the desired image size:
-        * `large`
-        * `xlarge`
-        * `small`
-        * `master`
+    * `:size`  - replace this with the desired image size:
+        * `large` - default size when viewed in the gallery
+        * `xlarge` - default when viewed within a comment
+        * `small` - smallest file size
+        * `master` - original file without file ending
 
 ## Entities
 
