@@ -1,5 +1,6 @@
 # Comments/Posts
 
+## TODO: Split comments and posts into seperate files
 Writing posts in groups or from a timeline uses the same endpoit, but does differ by the request which needs to be sent
 
 ## Writing a Post
@@ -35,7 +36,7 @@ Writing posts in groups or from a timeline uses the same endpoit, but does diffe
 ### `https://www.minds.com/api/v1/comments/:guid`
 * Method: `POST`
 * Params:
-    * `guid` - the guid of a post
+    * `guid` - the guid of a post, blog, video or image
 * Request
 
 | Parameter | type | Description |
