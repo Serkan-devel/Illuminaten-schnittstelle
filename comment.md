@@ -57,6 +57,16 @@ Writing posts in groups or from a timeline uses the same endpoit, but does diffe
 | `status` | string | Output: "success" |
 | `comment` | dict | Dictionary of [Comment](#comment) |
 
+## Loading eariler comments
+### `https://www.minds.com/api/v1/comments/:post_guid?limit=5&offset=&reversed=false`
+* Method: `GET`
+* Request params
+    * `:post_guid` - replace this with the guid of a post,blog post,video or image
+    * `limit` - the ammount of comments that are loaded
+    * `reversed` - if comments are loaded in reversed order. Set to `false` by default
+
+
+
 ## Activity
 
 | Parameter | type | Description |
