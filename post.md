@@ -138,7 +138,7 @@ Writing posts in groups or from a timeline uses the same endpoit, but does diffe
 | `boost_rejection_reason` | string | Output: "-1" |
 | `mature` | bool | false |
 | `rating` | string | Output: "1" |
-| `videoChatDisabled` | string | Minds Video Calling, coming soon™ <br> Output: "1" |
+| `videoChatDisabled` | string | Minds Gatherings, coming soon™ <br> Output: "1" |
 | `owner_guid` | string | The guid of the channel, which created that group |
 | `members:count` | string | The ammount of group members. <br> Output: "83" |
 | `requests:count` | string | The ammount of channels, requesting membership <br> Output: "0" |
@@ -172,7 +172,8 @@ Writing posts in groups or from a timeline uses the same endpoit, but does diffe
 | `height` | int | The height of the attached image |
 
 ## Up/downvotes
-### `https://www.minds.com/api/v1/thumbs/[base64-encoded string]/{up or down}`
+### `https://www.minds.com/api/v1/thumbs/:post_guid/:vote`
 * Method: `PUT`
-
-# TODO: k/v
+* Request Params:
+    * `:post_guid` - The guid which one wants to vote
+    * `:vote` - Replace this with either `up` or `down` for voting 

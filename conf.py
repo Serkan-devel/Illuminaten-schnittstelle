@@ -20,11 +20,11 @@
 # -- Project information -----------------------------------------------------
 
 project = 'LupinAPI'
-copyright = '2018, SerkanDevel'
+copyright = '2019, SerkanDevel'
 author = 'SerkanDevel'
 
 # The short X.Y version
-version = '0.0.1'
+version = '0.0.2'
 # The full version, including alpha/beta/rc tags
 release = 'rc0'
 
