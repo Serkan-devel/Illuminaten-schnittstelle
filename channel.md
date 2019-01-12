@@ -1,14 +1,34 @@
 # Channels
 
-## Get channel info
-### `https://www.minds.com/api/v1/channel/:username?`
-### or `https://www.minds.com/{user guid}`
+## Fetch channel info
+### `https://www.minds.com/api/v1/channel/{:username or :channel_guid}?`
 
 * Method: `GET`
-* Request: ""
-* Response: Returns [User](#user)
+* Request params:
+    * `username` - The '@'-name of a channel which can't be changed
+    * `:channel_guid` - The guid of a channel
+* Response:
 
-## User
+| Parameter | type | Description |
+| --- |:---:| ---:|
+| `status` | string | Output: "success" |
+| `channel` | dict | Returns [channel object](#channel-object) | 
+
+or
+
+| Parameter | type | Description |
+| --- |:---:| ---:|
+| `status` | string | Output: "error" |
+| `message` | string | Output: "The user is banned" |
+
+otherwise
+
+| Parameter | type | Description |
+| --- |:---:| ---:|
+| `status` | string | Output: "error" |
+| `message` | string | Output: "The user could not be found" |
+
+## channel object
 
 | Parameter | Type | Description |
 | --- | :---: | ---: |
