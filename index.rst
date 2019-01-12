@@ -14,6 +14,7 @@ A collection of instructions to contact the illuminati
    
    maindrive
    auth
+   post
    comment
    channel
    blog
