@@ -1,11 +1,11 @@
-## Messenger
+# Messenger
 
 One of the seeling points of 'Minds' is that their messenger is encrypted, hence their name "encrypted chat".
 Considering that almost all messenger encryption happends on the server-side, an admin or a hacker only needs to view all plaintext authentication requests, or tamper with the encryption keys.
 Users of the messenger won't notice if anything got tampered or spyed on but it's still enough to give them a false-sense of security.
 
-### View conversations
-#### `https://www.minds.com/api/v2/messenger/conversations`
+## View conversations
+### `https://www.minds.com/api/v2/messenger/conversations`
 * Method: `GET`
 * Params: `limit=:int`
 
@@ -18,8 +18,8 @@ Users of the messenger won't notice if anything got tampered or spyed on but it'
 | `load-next` | int | Output: 12 |
 | `load-previous` | int | Output: -12 |
 
-### View chat timeline
-#### `https://www.minds.com/api/v2/messenger/conversations/{your guid}:{other guid}?limit=8&offset={message guid}&finish=`
+## View chat timeline
+### `https://www.minds.com/api/v2/messenger/conversations/{your guid}:{other guid}?limit=8&offset={message guid}&finish=`
 * Method: `GET`
 * Params: `limit=8&offset=&finish=`
 * Response:
@@ -44,7 +44,7 @@ Users of the messenger won't notice if anything got tampered or spyed on but it'
 | `load-previos` | string | guid of the previous messages |
 | `publickeys` | dict | A dict of your public key, the public key of the other user and the public key of the room. <br> `{[your guid]:[public key],[his/her guid]:[public key],[(your guid):(his/her guid)]:[public key]}` |
 
-### Comment
+## Comment in Chat
 * Method: `GET`
 * Request:
 
@@ -61,15 +61,15 @@ Users of the messenger won't notice if anything got tampered or spyed on but it'
 | --- |:---:|---:|
 | `messages` | dict | A dictionary with both guids of you and the reciever, but with encryption keys attatched to it. <br> Example: `"messages": {[your guid]:[encryption key],[reciever guid]:[encryption key]}`|
 
-### Authenticate with messenger
-#### `https://www.minds.com/api/v2/messenger/keys/unlock`
+## Authenticate with messenger
+### `https://www.minds.com/api/v2/messenger/keys/unlock`
 * Method: `POST`
 * Params: `{password: ":msgpassword"}`
 * JSON Response: `{"status":"success"}`
 * Cookie Response: `messenger-secret`
 
 
-### Conversations
+## Conversations
 
 | Parameter | type | Description |
 | --- |:---:|---:|
@@ -87,7 +87,7 @@ Users of the messenger won't notice if anything got tampered or spyed on but it'
 | `subscriber` | bool | Are you subscribed to that user? |
 
 
-### Messages
+## Messages
 
 | Parameter | type | Description |
 | --- |:---:|---:|

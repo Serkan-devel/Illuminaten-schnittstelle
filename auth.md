@@ -1,11 +1,11 @@
-## Authentication
+# Authentication
 
 Current authentication-method is only [HTTP Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization).
 
 Minds staff still developing on OAuth-support to make this process more secure.
 
-### `/api/v1/authenticate`
-#### Login to Minds.com with your username and password
+## `/api/v1/authenticate`
+### Login to Minds.com with your username and password
 * Method: `POST`
 * Request:
 
