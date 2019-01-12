@@ -4,8 +4,8 @@ Current authentication-method is only [HTTP Basic Authentication](https://develo
 
 Minds staff still developing on OAuth-support to make this process more secure.
 
-## `/api/v1/authenticate`
-### Login to Minds.com with your username and password
+## Login to Minds.com with your username and password
+### `/api/v1/authenticate`
 * Method: `POST`
 * Request:
 
@@ -21,4 +21,18 @@ Minds staff still developing on OAuth-support to make this process more secure.
 |`success`|displays status of success|"success"|
 |`user`|gives output of user||
 
+<<<<<<< HEAD
 * Note: You need to pass xsrf-tokens and cookies on the http-header
+=======
+
+## Authenticate with messenger
+### `https://www.minds.com/api/v2/messenger/keys/unlock`
+* Method: `POST`
+* Request params dict:
+    * `password` - Add you password next to it
+* JSON Response: 
+    * `{"status":"success"}`
+* Cookie Response: 
+    * `messenger-secret`
+
+>>>>>>> ef828f8... move messenger authentication to auth.me

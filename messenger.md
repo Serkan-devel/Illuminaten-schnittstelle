@@ -4,6 +4,8 @@ One of the seeling points of 'Minds' is that their messenger is encrypted, hence
 Considering that almost all messenger encryption happends on the server-side, an admin or a hacker only needs to view all plaintext authentication requests, or tamper with the encryption keys.
 Users of the messenger won't notice if anything got tampered or spyed on but it's still enough to give them a false-sense of security.
 
+Before using the messenger, you first have to [authenticate](auth.html#authenticate-with-messenger) to it seperately.
+
 ## View conversations
 ### `https://www.minds.com/api/v2/messenger/conversations`
 * Method: `GET`
@@ -60,13 +62,6 @@ Users of the messenger won't notice if anything got tampered or spyed on but it'
 | Parameter | type | Description |
 | --- |:---:|---:|
 | `messages` | dict | A dictionary with both guids of you and the reciever, but with encryption keys attatched to it. <br> Example: `"messages": {[your guid]:[encryption key],[reciever guid]:[encryption key]}`|
-
-## Authenticate with messenger
-### `https://www.minds.com/api/v2/messenger/keys/unlock`
-* Method: `POST`
-* Params: `{password: ":msgpassword"}`
-* JSON Response: `{"status":"success"}`
-* Cookie Response: `messenger-secret`
 
 
 ## Conversations
