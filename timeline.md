@@ -5,6 +5,8 @@
 ### `https://www.minds.com/api/v1/newsfeed/personal/:user_guid?limit=12&offset=&pinned=:post_guid`
 ## View group timeline
 ### `https://www.minds.com/api/v1/newsfeed/container/:group_guid?limit=12&offset=`
+## View a single timeline post
+### `https://www.minds.com/api/v1/newsfeed/single/:post_guid`
 * Method: `GET`
 * Request URL Params:
     * `limit`: how many posts are recieved at a time. Default is `12`

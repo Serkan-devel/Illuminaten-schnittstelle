@@ -16,6 +16,7 @@ A collection of instructions to contact the illuminati
    auth
    post
    comment
+   timeline
    channel
    blog
    messenger
